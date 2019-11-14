@@ -19,12 +19,9 @@ export default class Quoteboard extends Component {
         this.setState({quotes : json})
     };
 
-
-
-
-    render() {
+     render() {
         if (this.state.quotes == null){
-            return <div>Even wachten...</div>
+            return <div>Wait a moment...</div>
         }
         const quotes_copy = [...this.state.quotes];
         quotes_copy.sort((a, b) => a.author.localeCompare(b.author));
@@ -38,10 +35,6 @@ export default class Quoteboard extends Component {
                 </ul>
             </div>
         );
-
-
-
-
     }
 
     renderQuote = quote => {
